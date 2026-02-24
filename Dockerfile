@@ -8,5 +8,5 @@ RUN npm install
 # 나머지 진짜 코드들을 복사
 COPY . .
 
-EXPOSE 3000
+EXPOSE 3001
 CMD ["node", "server.js"]
