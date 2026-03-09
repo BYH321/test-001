@@ -1,0 +1,21 @@
+name: Artifact Build and Upload
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses:  actions/checkout@v4
+
+      - name: Create an artifact
+        run: zip -r output.zip .
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: my-artifact
+          path: output.zip
